@@ -1,0 +1,17 @@
+<main class="picture-thumbnails">
+    <article id="mygallery">
+        <div *ngFor="let pic of picturesList" style="display:inline-flex">
+            <div class="card-container">
+                <a class="card" target="_blank" rel="noopener" (click)="showPictureInDetail = !showPictureInDetail">
+                    <span>
+                        <img src="../../assets/images/newspaper-present.jpeg" alt="rainbow" width="100%" height="350">
+                    </span>
+                </a>
+            </div>
+        </div>
+    </article>
+    <div *ngIf="showPictureInDetail">
+        <app-picture-modal (close)="setShowFlag($event)"></app-picture-modal>
+    </div>
+
+</main>
